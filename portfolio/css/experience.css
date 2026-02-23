@@ -7,14 +7,14 @@ body {
 }
 
 h2 {
-    color: rgb(14, 3, 131);
+    color: #25218C;
     text-align: center;
 }
 
 .experience {
-    color: rgb(9, 9, 9);
+    color: #000000;
     text-align: left;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid #000000;
     cursor: pointer;
     margin-bottom: 20px;
     padding: 0px 10px;

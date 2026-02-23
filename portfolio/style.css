@@ -7,12 +7,12 @@ body {
 }
 
 h1 {
-    color: rgb(14, 3, 131);
+    color: #25218C;
     text-align: center;
 }
 
 h2 {
-    color: rgb(9, 9, 9);
+    color: #25218C;
     text-align: center;
     border: 2px solid rgb(0, 0, 0);
     cursor: pointer;
