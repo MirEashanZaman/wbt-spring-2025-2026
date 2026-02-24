@@ -14,7 +14,7 @@ h1 {
 h2 {
     color: #25218C;
     text-align: center;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid#000000;
     cursor: pointer;
 }
 
