@@ -1,4 +1,66 @@
+body {
+    background-color: #E8E5E5;
+}
+
 h1 {
-    color: #d32222;
+    color: #FB000D;
+}
+
+table {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.note {
+    display: block;
+    font-size: 15px;
+    color: #555;
+}
+
+.center-form {
+    margin-left: 50px;
+}
+
+td:first-child {
+    text-align: right;
+    padding-right: 15px;
+    font-weight: bold;
+}
+
+
+input[type="text"] {
+    width: 350px;
+}
+
+select,
+input[type="email"] {
+    width: 350px;
+}
+
+select[name="state"] {
+    width: 150px;
+    margin-right: 208px;
+}
+
+span {
+    color: #FB000D;
+}
+
+#monthly_credit_card,
+#months {
+    width: 60px;
+    display: inline-block;
+}
+
+td.left-align {
     text-align: left;
+}
+
+nav a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: black;
 }
