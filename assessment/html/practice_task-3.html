@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Membership Check</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAA7EC;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #B450B8;
+        }
+
+        .section {
+            background: #F9D7FA;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="section">
+            <h2>User’s Age For A Community Membership Check</h2>
+            <div class="input-group">
+                <label for="ageInput">Age</label>
+                <input type="number" id="ageInput" placeholder="Enter your age" />
+            </div>
+            <div class="message" id="ageMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        const ageInput = document.getElementById('ageInput');
+        const ageMessage = document.getElementById('ageMessage');
+
+        ageInput.addEventListener('input', function () {
+            const age = parseInt(ageInput.value);
+
+            if (ageInput.value === '') {
+                ageMessage.textContent = '';
+                ageMessage.style.color = '';
+            } else if (age < 40) {
+                ageMessage.textContent = 'To be a part of the community, you need to at least 40.';
+                ageMessage.style.color = '#EF0000';
+            } else if (age >= 40 && age <= 50) {
+                ageMessage.textContent = 'You are the youngsters of this community.';
+                ageMessage.style.color = '#27BB27';
+            } else {
+                ageMessage.textContent = 'Top level members of the group.';
+                ageMessage.style.color = '#EF0000';
+            }
+        });
+    </script>
+</body>
+
+</html>

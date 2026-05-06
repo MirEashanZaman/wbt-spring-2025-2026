@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAA7EC;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #B450B8;
+        }
+
+        .section {
+            background: #F9D7FA;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 8px auto;
+            padding: 10px 100px;
+            border: none;
+            border-radius: 8px;
+            background: #B450B8;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .error {
+            color: #EF0000;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .success {
+            color: #B450B8;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .invalid {
+            border: 2px solid #EF0000;
+            background: #FFFFFF;
+        }
+
+        .valid {
+            border: 2px solid #27BB27;
+            background: #FFFFFF;
+        }
+
+        #formSuccess {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="section">
+            <h2>Name Form Validation</h2>
+
+            <form id="nameForm" novalidate>
+                <div class="input-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter First Name" />
+                    <div class="error" id="firstNameError"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter Last Name" />
+                    <div class="error" id="lastNameError"></div>
+                </div>
+
+                <button type="submit">Submit</button>
+                <div id="formSuccess" class="success"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const nameForm = document.getElementById('nameForm');
+        const firstNameInput = document.getElementById('firstName');
+        const lastNameInput = document.getElementById('lastName');
+        const firstNameError = document.getElementById('firstNameError');
+        const lastNameError = document.getElementById('lastNameError');
+        const formSuccess = document.getElementById('formSuccess');
+
+        function showError(inputElement, errorElement, message) {
+            errorElement.textContent = message;
+
+            inputElement.classList.remove('valid');
+            inputElement.classList.add('invalid');
+        }
+
+        function showValid(inputElement, errorElement) {
+
+            errorElement.textContent = '';
+
+            inputElement.classList.remove('invalid');
+            inputElement.classList.add('valid');
+        }
+
+
+        function resetValidation() {
+            formSuccess.textContent = '';
+
+            firstNameError.textContent = '';
+            lastNameError.textContent = '';
+
+            firstNameInput.classList.remove('valid', 'invalid');
+            lastNameInput.classList.remove('valid', 'invalid');
+        }
+
+        nameForm.addEventListener('submit', function (event) {
+
+            event.preventDefault();
+
+
+            resetValidation();
+
+
+            const firstNameValue = firstNameInput.value.trim();
+            const lastNameValue = lastNameInput.value.trim();
+
+            let isFormValid = true;
+
+            if (firstNameValue === '') {
+                showError(firstNameInput, firstNameError, 'First name required');
+                isFormValid = false;
+            } else if (firstNameValue.length < 2) {
+                showError(firstNameInput, firstNameError, 'Each field must have at least 2 characters');
+                isFormValid = false;
+            } else {
+                showValid(firstNameInput, firstNameError);
+            }
+
+            if (lastNameValue === '') {
+                showError(lastNameInput, lastNameError, 'Last name required');
+                isFormValid = false;
+            } else if (lastNameValue.length < 2) {
+                showError(lastNameInput, lastNameError, 'Each field must have at least 2 characters');
+                isFormValid = false;
+            } else {
+                showValid(lastNameInput, lastNameError);
+            }
+
+            if (isFormValid) {
+                formSuccess.textContent = 'Submitted Successfully!';
+            } else {
+                alert('Submission Failed!!');
+            }
+        });
+    </script>
+</body>
+
+</html>

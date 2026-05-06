@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Management</title>
+  <link rel="stylesheet" href="../css/product_management_page.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Product Management Page</h1>
+
+    <table>
+      <tr>
+        <td class="label">Product Name</td>
+        <td>Resident Evil Requiem</td>
+      </tr>
+      <tr>
+        <td class="label">Unit Price</td>
+        <td>400</td>
+      </tr>
+      <tr>
+        <td class="label">Quantity</td>
+        <td><input type="number" id="quantity" value="1" min="0"></td>
+      </tr>
+      <tr>
+        <td class="label">Total Price</td>
+        <td><input type="text" id="totalPrice" value="400" readonly></td>
+      </tr>
+    </table>
+
+    <p id="errorMsg">Quantity cannot be less than 0</p>
+
+  </div>
+
+  <script src="../js/product_management_page.js"></script>
+</body>
+
+</html>

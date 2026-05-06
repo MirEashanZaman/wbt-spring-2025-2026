@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uppercase Username</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAA7EC;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #B450B8;
+        }
+
+        .section {
+            background: #F9D7FA;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="section">
+            <h2>Uppercase Username</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+
+        usernameInput.addEventListener('input', function () {
+            usernameInput.value = usernameInput.value.toUpperCase();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+    <link rel="stylesheet" href="../css/discount_calculator_page.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Discount Calculator</h1>
+
+        <table>
+            <tr>
+                <td class="label">Original Price</td>
+                <td><input type="number" id="originalPrice" placeholder="Enter price" min="0"></td>
+            </tr>
+
+            <tr>
+                <td class="label">Discount (%)</td>
+                <td><input type="number" id="discountPercent" placeholder="Enter discount" min="0" max="100"></td>
+            </tr>
+
+            <tr>
+                <td class="label">Tax Rate</td>
+                <td>5% (Fixed)</td>
+            </tr>
+
+            <tr>
+                <td class="label">Final Price</td>
+                <td><input type="text" id="finalPrice" value="0.00" readonly></td>
+            </tr>
+        </table>
+
+        <p class="error" id="errorMsg"></p>
+        <button id="calcBtn">Calculate</button>
+
+    </div>
+
+    <script src="../js/discount_calculator_page.js"></script>
+</body>
+
+</html>
